@@ -49,7 +49,7 @@ function App() {
     }
   };
 
-  const searchHandler = (text: string) => {
+  const searchHandler = (text: string) : void => {
     if (text.trim() !== "") {
       setSearchMyTodos(
         myTodos.filter(
@@ -61,7 +61,7 @@ function App() {
       setSearchMyTodos(myTodos);
     }
   };
-  const markAsDoneHandler = async (todoId: string) => {
+  const markAsDoneHandler = async (todoId: string) : void=> {
     try {
       let res = await fetch(`/todo/${todoId}`, {
         method: "PUT",
